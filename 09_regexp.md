@@ -466,7 +466,7 @@ So the matcher _backtracks_. When entering a branch, it remembers its current po
 
 The matcher stops as soon as it finds a full match. This means that if multiple branches could potentially match a string, only the first one (ordered by where the branches appear in the regular expression) is used.
 
-Backtracking also happens for ((repetition)) operators like + and `*`. If you match `/^.*x/` against `"abcxe"`, the `.*` part will first try to consume the whole string. The engine will then realize that it needs an _x_ to match the pattern. Since there is no _x_ past the end of the string, the star operator tries to match one character less. But the matcher doesn't find an _x_ after `abcx` either, so it backtracks again, matching the star operator to just `abc`. _Now_ it finds an _x_ where it needs it and reports a successful match from positions 0 to 4.
+Backtracking also happens for ((repetition)) operators like `+` and `*`. If you match `/^.*x/` against `"abcxe"`, the `.*` part will first try to consume the whole string. The engine will then realize that it needs an _x_ to match the pattern. Since there is no _x_ past the end of the string, the star operator tries to match one character less. But the matcher doesn't find an _x_ after `abcx` either, so it backtracks again, matching the star operator to just `abc`. _Now_ it finds an _x_ where it needs it and reports a successful match from positions 0 to 4.
 
 {{index performance, complexity}}
 
