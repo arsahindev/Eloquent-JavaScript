@@ -212,7 +212,7 @@ A CommonJS module looks like a regular script, but it has access to two bindings
 
 This CommonJS example module provides a date-formatting function. It uses two ((package))s from NPM—`ordinal` to convert numbers to strings like `"1st"` and `"2nd"`, and `date-names` to get the English names for weekdays and months. It exports a single function, `formatDate`, which takes a `Date` object and a ((template)) string.
 
-The template string may contain codes that direct the format, such as `YYYY` for the full year and `Do` for the ordinal day of the month. You could give it a string like `"MMMM Do YYYY"` to get output like "November 22nd 2017".
+The template string may contain codes that direct the format, such as `YYYY` for the full year and `Do` for the ordinal day of the month. You could give it a string like `"MMMM Do YYYY"` to get output like `"November 22nd 2017"`.
 
 ```
 const ordinal = require("ordinal");
